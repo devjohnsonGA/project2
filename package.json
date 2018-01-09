@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/devjohnsonGA/project2#readme",
   "dependencies": {
+    "@google/maps": "^0.4.5",
     "express": "^4.16.2",
     "hbs": "^4.0.1",
     "method-override": "^2.3.10"
+  },
+  "devDependencies": {
+    "map-tools": "^2.0.0"
   }
 }

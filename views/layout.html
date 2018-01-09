@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+    <script src='../config/map.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
+    <title>Pop-up Shop</title>
+</head>
+<body>
+    <div id='map' style='width: 1000px; height: 400px; text-align: center></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGV2b25kYXBoZW5vbSIsImEiOiJjamM4MTljeGYwMDdnMnFzOTRwNXhkeGtvIn0.CE_Mknd3lwIQ915yhIrUCQ';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10'
+    });
+</script>
+ 
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVjAJ0eg9k7ABR0PWWemX5i_pmbC_gCn8&callback=initMap">
+    </script>
+
+</body>
+</html>
+

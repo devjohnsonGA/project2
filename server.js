@@ -10,22 +10,16 @@ const port = process.env.port|| 8080
 //mongoDB 
 
 app.use(bodyParser.json())
-
-app.use(bodyParser.json({type: 'application/vnd.api+json'}))
-
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(methodOverride('X-HTTP-Method-Override'))
 
-app.use(express.static(__dirname + '/public'))
 
-app.set('view engine', 'hbs')
+app.set('view engine', __dirname + '/views/layout.html')
 
 app.get('/', (req, rep) => {
-    rep.send('Hello World')
+    rep.render('views/layout')
 })
-
-
 
 
 // require('./app/routes')(app)
