@@ -18,11 +18,17 @@
   "homepage": "https://github.com/devjohnsonGA/project2#readme",
   "dependencies": {
     "@google/maps": "^0.4.5",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "hbs": "^4.0.1",
-    "method-override": "^2.3.10"
+    "method-override": "^2.3.10",
+    "mongoose": "^4.13.9",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
+    "@angular/cli": "^1.6.3",
     "map-tools": "^2.0.0"
   }
 }

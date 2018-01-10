@@ -15,10 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('X-HTTP-Method-Override'))
 
 
-app.set('view engine', __dirname + '/views/layout.html')
+app.set('view engine', __dirname + '/views/layout')
 
 app.get('/', (req, rep) => {
-    rep.render('views/layout')
+    rep.render('/layout')
 })
 
 
