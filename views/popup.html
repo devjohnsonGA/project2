@@ -22,7 +22,7 @@
         function initMap(){
             //map options
             var options = {
-                zoom:8,
+                zoom:13,
                 center: {lat:38.9072, lng:-77.0369}
             }
 
@@ -41,14 +41,39 @@
             // marker.addListener('click', function(){
             //     infoWindow.open(map, marker)
             // })
-
-            addMarker({lat:38.8977, lng:-77.0365})    
+            var markers = [  
+                {
+                coords:{lat:38.8977, lng:-77.0365},
+                content: '<h1>White House</h1>'
+            },
+                {
+                coords:{lat:38.9033, lng:-77.0785},
+                content: '<h1>Water Popup</h1>'
+            }, 
+                {
+                coords:{lat:38.8888, lng:-77.0555},
+                content: '<h1>Boat PopShop</h1>'
+            } 
+            ]  
+            
+            //loop markers
+            for(){
+                
+            }
             // add marker function
-            function addMarker(coords) {
+            function addMarker(props) {
                 var marker = new google.maps.Marker({
-                position:coords,
+                position:props.coords,
                 map:map
             })
+            if(props.content){
+                var infoWindow = new google.maps.InfoWindow({
+                    content:props.content
+                })
+                marker.addListener('click', function(){
+                infoWindow.open(map, marker)
+            })
+            }
             }
         }    
     </script>
