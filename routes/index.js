@@ -1,31 +1,24 @@
 var express = require('express')
-var router = express.Router()
-const Popup = require('../model/schema')
+    router = express.Router()
+    Popup = require('../model/schema')
+    bodyParser = require('body-parser'),
+    router.get('/', function(req, res, next){
+        res.render('popup')
+    })
 
-router.get('/', function(req, res, next){
-    res.render('popup')
-})
-
-// router.get('/', (req, res) => {
-//     Popup.find({})
-//     .then((popup) => {
-//         res.render('popups-index', {
-//             popups: popups
-//         })
-//     })
-//     .catch((err) => {
-//         console.log(err)
-//     })
-// })
 
 router.get('/users', function(req, res, next){
     res.send('User Page')
 })
+router.post('/users', function(req, res, next){
+    res.send('User Post Page')
+})
+
 
 router.get('/users/popups', function(req, res, next){
     res.send('Users Popup Page')
 })
 
 module.exports = router
-// module.exports = Popup
+
 
