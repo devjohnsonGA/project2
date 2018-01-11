@@ -2,16 +2,16 @@ var express = require('express')
     router = express.Router()
     Popup = require('../model/schema')
     bodyParser = require('body-parser'),
-    router.get('/', function(req, res, next){
-        res.render('popup')
-    })
-
+    
+router.get('/', function(req, res, next){
+    res.render('popup')
+})
 
 router.get('/users', function(req, res, next){
     res.send('User Page')
 })
 router.post('/users', function(req, res, next){
-    res.send('User Post Page')
+    console.log(req.body)
 })
 
 

@@ -18,6 +18,8 @@
     
     <div id='map'></div>
 
+
+   
     <script>
         function initMap(){
             //map options
@@ -28,25 +30,26 @@
 
             // new app
             var map = new google.maps.Map(document.getElementById('map'), options)
-
+        
             //listen for click
             google.maps.event.addListener(map, 'click', 
             function(event){
                 addMarker({coords:event.latLng})
+                
             })
-            
+
             var markers = [  
                 {
                 coords:{lat:38.8977, lng:-77.0365},
-                content: '<h1>White House</h1>'
+                content: '<h1>White House</h1><br><p>Walls: $1000</p>'
             },
                 {
                 coords:{lat:38.9033, lng:-77.0785},
-                content: '<h1>Water Popup</h1>'
+                content: '<h1>Water Popup</h1><br><p>Lifejacket Rental: $50</p>'
             }, 
                 {
                 coords:{lat:38.8888, lng:-77.0555},
-                content: '<h1>Boat PopShop</h1>'
+                content: '<h1>Boat PopShop</h1><br><p>Fish food: $10</p>'
             } 
             ]  
             
@@ -59,6 +62,7 @@
                 var marker = new google.maps.Marker({
                 position:props.coords,
                 map:map
+                
             })
             if(props.content){
                 var infoWindow = new google.maps.InfoWindow({
