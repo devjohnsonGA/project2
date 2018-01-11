@@ -1,0 +1,17 @@
+{{#if popup}}
+<h2>{{popup.name}} located in DC!</h2>
+{{else}}
+<h2>That popup couldn't be found!</h2>
+{{/if}}
+
+<h2>Update Information</h2>
+<form method='POST' action='/users/{{popup.name}}?_method=put'>
+    <input type='text' name='candidate[name]' value='{{ candidate.name }}'>
+    <input type='text' name='candidate[year]' value='{{ candidate.year }}'>
+    <input type='submit' name='Submit'>
+</form>
+
+<h2>Remove Popup</h2>
+<form method='Post' action='/users/{{popup.name}}?_method=delete'>
+    <input type='submit' value='remove'>
+</form>

@@ -9,6 +9,11 @@
         #map{
             height:400px;
             width: 100%;
+        }  
+        #table{
+            padding: 25px
+            border: 5px solid black
+            margin: auto
         }
     </style>
 </head>
@@ -16,8 +21,27 @@
    
     <h1>PopUpShop</h1>
     
-    <div id='map'></div>
+    <div id='map' name='popupEntry'></div>
 
+    <form action='/' method='post'>
+        <div>
+            <input type='text' value='name'/>
+        </div>
+        <div>
+            <input type='text' value='popup'/>
+        </div>
+        <div>
+            <input type='number' value='lat' id='lat'/>
+        </div>
+        <div>
+            <input type='number' value='lng' id='lng'/>
+        </div>
+    <div class='button'>
+        <button type='submit' name='submit' onclick="map(document.popupEntry.submit())"> Create Popup!</button>
+    </div>    
+    </form>
+
+    <div id='table'></div>
 
    
     <script>
@@ -62,7 +86,6 @@
                 var marker = new google.maps.Marker({
                 position:props.coords,
                 map:map
-                
             })
             if(props.content){
                 var infoWindow = new google.maps.InfoWindow({
@@ -72,6 +95,8 @@
                 infoWindow.open(map, marker)
             })
             }
+            lat.value = props.coords.lat()
+            lng.value = props.coords.lng()
             }
         }    
     </script>

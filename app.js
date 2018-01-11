@@ -1,35 +1,35 @@
 var express = require('express'),
+    app   = express(),
     path = require('path'),
-    favicon = require('serve-favicon'),
-    logger = require('morgan'),
-    cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
-    db = require('./model/db'),
-    routes = require('./routes/index'),
-    users = require('./routes/users')
-    handlebars = require('express-handlebars')
+    popups      = require('./controllers/index')
+    methodOverride = require('method-override'),
+    hbs = require('express-handlebars')
 
-    app   = express()
+    db = require('./db/connections'),
+    routes = require('./controllers/index')
 
-    app.use(bodyParser.urlencoded({ extended: false}))
+
+    app.use(bodyParser.urlencoded({ extended: true}))
     app.use(bodyParser.json())
+    app.use(methodOverride('_method'))
+    app.set('view engine', 'hbs')
 
-    // app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-    // app.set('view engine', 'handlebars')
-
-    app.engine('html', require('ejs').renderFile)
-    app.set('view engine', 'html')
-
-    // app.use(function (req, res) {
-    //     res.setHeader('Content-Type', 'text/plain')
-    // })
+    app.engine('.hbs', hbs({
+        extname:        '.hbs',
+        partialsDir:    'views/',
+        layoutsDir:     'views/',
+        defaultLayout:  'popups-index'
+      }))
 
     app.set('port', process.env.PORT || 3300);
-    app.set('views', __dirname + '/views');
+    
     
     app.get('/', routes)
-    app.get('/users', routes)
-    app.get('/users/popups', routes)
+    // app.get('/users', routes)
+    // app.get('/users/popups', routes)
+
+    app.use('/popups', popups)
 
     app.listen(app.get('port'), function(){
         console.log('Server up: http://localhost:' + app.get('port'));

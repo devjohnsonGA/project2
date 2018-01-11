@@ -1,5 +1,7 @@
-const Popup = require('./schema')
+const mongoose = require('../model/popup')
 const seedData = require('./seeds.json')
+
+const Popup = mongoose.model('Popup')
 
 Popup.remove({})
     .then(() => {
@@ -9,4 +11,3 @@ Popup.remove({})
         process.exit()
     })
 
-    // module.exports = Popup
