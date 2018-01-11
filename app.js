@@ -6,12 +6,16 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     db = require('./model/db'),
     routes = require('./routes/index'),
-    users = require('./routes/users');
+    users = require('./routes/users')
+    handlebars = require('express-handlebars')
+
     app   = express()
-    
 
     app.use(bodyParser.urlencoded({ extended: false}))
     app.use(bodyParser.json())
+
+    // app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+    // app.set('view engine', 'handlebars')
 
     app.engine('html', require('ejs').renderFile)
     app.set('view engine', 'html')
