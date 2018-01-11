@@ -8,6 +8,7 @@ var express = require('express'),
     routes = require('./routes/index'),
     users = require('./routes/users');
     app   = express()
+    
 
     app.use(bodyParser.urlencoded({ extended: false}))
     app.use(bodyParser.json())
@@ -23,6 +24,8 @@ var express = require('express'),
     app.set('views', __dirname + '/views');
     
     app.get('/', routes)
+    app.get('/users', routes)
+    app.get('/users/popups', routes)
 
     app.listen(app.get('port'), function(){
         console.log('Server up: http://localhost:' + app.get('port'));

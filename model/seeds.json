@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Devon",
+    "popup": "Coffee",
+    "lat": 38.9072,
+    "lng": -77.0369
+  },
+  {
+    "name": "Mike",
+    "popup": "Tea",
+    "lat": 38.9072,
+    "lng": -76.0369
+  },
+  {
+    "name": "Chrissy",
+    "popup": "Hair",
+    "lat": 38.8072,
+    "lng": -75.0369
+  },
+  {
+    "name": "Bella",
+    "popup": "Bears",
+    "lat": 38.9500,
+    "lng": -77.1050
+  }
+]
